@@ -115,7 +115,7 @@ def poverty():
 #wall
 def wall():
     print "You also promised to build a wall on the border to Mexico."
-    print "Do you still want to do it?"
+    print "Do you still want to do that?"
 
     choice = raw_input("\t >> ")
 
@@ -138,6 +138,7 @@ def wall():
     elif choice == "no":
         print "Too bad, the people are angry!"
     else:
+        print "Anyway..."
     print "Next issue."
     poverty()
 
