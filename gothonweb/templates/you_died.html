@@ -1,27 +1,17 @@
-<!doctype html>
-<html>
-<head>
+{% extends "layout.html" %}
+
 <meta charset="utf-8">
 <link rel="stylesheet" type="text/css" href="/static/makeitpretty.css">
 <!-- Neither the background-color, nor the font-color work from the CSS file,
 so I had to change the background in the layout and font-color in each file.
 I know it doesn't look very classy, but it didn't seem to work otherwise,
 I don't know why... I left the CSS file though, in case it works one day.-->
-<style>
-body {
-  background-color: rgb(0, 20, 40);
-}
-</style>
+<font color="white">{% block content %}</font>
 
-  <p class="title">
-  <font color="white">Hey you! The Gothons of Planet 'Percal Y25.K04' are back!</font>
+<h1>You Died!</h1>
+<div id="content">
+<font color="white">Looks like you bit the dust...</font>
 
-</head>
-<body>
-
-<p class="content">
-<font color="white">{% block content %}
-  {% endblock %}</font>
-</p>
-</body>
-</html>
+<p><a href="/">Play Again?</a></p>
+</div>
+{% endblock %}</font>

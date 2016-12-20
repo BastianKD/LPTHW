@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="/static/makeitpretty.css">
+<!-- Neither the background-color, nor the font-color work from the CSS file,
+so I had to change the background in the layout and font-color in each file.
+I know it doesn't look very classy, but it didn't seem to work otherwise,
+I don't know why... I left the CSS file though, in case it works one day.-->
+
+<body>
+<font color="white">{% block content %}
+  {% if scene %}
+  <h1><font color="white">{{ scene.title }}</font></h1>
+  <pre><font color="white">{{ scene.description }}</font></pre>
+  {% if scene.urlname == "death" %}
+    <p><a href="/">Play Again?</a></p>
+  {% else %}
+  <p>
+    <form action="/game" method="POST">
+      What do you do? <input type="text" name="userinput"> <input type="SUBMIT">
+    </form>
+  </p>
+  {% endif %}
+  {% else %}
+  <p><a href="/">Start at the Beginning</a></p>
+  {% endif %}
+  {% endblock %}</font>
+</body>
